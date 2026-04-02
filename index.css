@@ -18,6 +18,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width:100vw;
+    /* allow horizontal scrolling for the gallery */
 }
 
 header {
@@ -64,6 +66,11 @@ section:first-of-type {
     display: inline-block;
     white-space: nowrap;
     animation: moveText 20s linear infinite;
+}
+#start {
+    font-family: "Sligoil", sans-serif;
+    color: rgb(0, 0, 0);
+    margin margin-top: 10vh;
 }
 
 #Schrift h1 {
@@ -112,10 +119,6 @@ section:first-of-type {
     margin-left: 30vw;
 }
 
-.ausschnitt-3 {
-    background-position: 66% 9%;
-    margin-right: 20vw;
-}
 
 div#Zitat {
     width: min(24vw, 340px);
@@ -138,100 +141,10 @@ div#Zitat p {
     text-align: center;
 }
 
-section#Galerie {
-    max-width: 100vw;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* 3 Spalten gleicher Breite */
-    /* Abstand zwischen den Bildern */
-    width: 100%;
-    height: auto;
-    gap: 3px;
-    padding: 40px;
-}
 
-section#Galerie .bilder-spalte1,
-section#Galerie .bilder-spalte2 {
-    display: grid;
-    gap: 3px;
-}
-
-section#Galerie .bilder-spalte1 img,
-section#Galerie .bilder-spalte2 img {
-    width: 100%;
-    display: block;
-    position: relative;
-    transition: transform 0.5s ease;
-}
-
-/* Leicht versetzte Optik in beiden Spalten */
-section#Galerie .bilder-spalte1 img:nth-child(odd),
-section#Galerie .bilder-spalte2 img:nth-child(odd) {
-    transform: translateX(-200px);
-}
-
-section#Galerie .bilder-spalte1 img:nth-child(even),
-section#Galerie .bilder-spalte2 img:nth-child(even) {
-    transform: translateX(300px);
-}
-section#Galerie .bilder-spalte1 img:hover {
-    transform: scale(1.02) translateX(50px);
-    z-index: 5;
-}
-section#Galerie .bilder-spalte2 img:hover {
-    transform: scale(1.02) translateX(-0px);
-    z-index: 5;
-}
-
-#Textfelder .textfeld {
-    font-family: "Sligoil", sans-serif;
-    display: block;
-    width: 300px;
-    height: auto;
-    background-color: #ffd5d5;
-}
-
-#Textfelder {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    min-height: 100%;
-    gap: 10px;
-    z-index: 10;
-}
-
-#Textfelder #Textfeld1 {
-    text-align: center;
-    position: sticky;
-    top: 12vh;
-    z-index: 5;
-    margin-top: 0;
-    line-height: 1.4;
-    white-space: pre-line;
-}
-
-#Textfelder #Textfeld2 {
-    text-align: center;
-    position: sticky;
-    top: calc(12vh + 92px + 12px);
-    z-index: 4;
-    margin-top: auto;
-    margin-bottom: auto;
-    line-height: 1.4;
-    white-space: pre-line;
-}
-
-#Textfelder #Textfeld3 {
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: 0;
-    line-height: 1.4;
-    white-space: pre-line;
-    margin-bottom: 4px;
-}
+/* ---------------
+Galerie
+------------------*/
 
 #Galerietitel {
     display: flex;
@@ -241,7 +154,108 @@ section#Galerie .bilder-spalte2 img:hover {
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 0.5rem 0;
-    height:10vh;
+    height:10vh;}
+
+
+
+#GalerieContainer {
+ /* container height matches image height */
+   display: grid;
+   background-color: rgba(255, 181, 79, 0.709);
+   height: 30vh;
+   margin-bottom: 10vh;
+  
+
+    
+    overflow-x: scroll;
+    grid-template-columns: repeat(3, max-content) repeat(3, minmax(12rem, 1fr)) repeat(4, max-content);
+    grid-template-rows: repeat(3, 1fr);
+    } 
+
+/* Let the text fields participate directly in the parent grid */
+
+#Galeriebild1 {
+      grid-column-start: 1;
+    grid-column-end:2;      
+    grid-row-start: 1;          
+    grid-row-end: 4;
+}
+#Galeriebild1:hover {
+    transform: scale(1.1);
+}
+#Galeriebild2 {
+      grid-column-start: 2;
+    grid-column-end:3;      
+    grid-row-start: 1;          
+    grid-row-end: 4;
+}
+#Galeriebild2:hover {
+    transform: scale(1.1);
+}
+
+#Galeriebild3 {
+            grid-column-start: 3;
+        grid-column-end:4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#Galeriebild3:hover {
+    transform: scale(1.1);
+}
+
+#Galeriebild4 {
+            grid-column-start: 7;
+        grid-column-end:8;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#Galeriebild4:hover {
+    transform: scale(1.1);
+}
+
+#Galeriebild5 {
+            grid-column-start: 8;
+        grid-column-end:9;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#Galeriebild5:hover {
+    transform: scale(1.1);
+}
+#Galeriebild6 {
+            grid-column-start: 9;
+        grid-column-end:10;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#Galeriebild6:hover {
+    transform: scale(1.1);
+}
+
+#Galeriebild7 {
+            grid-column-start: 10;
+        grid-column-end:11;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#Galeriebild7:hover {
+    transform: scale(1.1);
+}
+
+/* Make gallery images fully visible inside their grid cell */
+.Galeriebild {
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    
+}
+
+#Textfelder {
+        display: contents;
+        margin: 20%;
+      -items:  center;
+
 
 }
 
@@ -249,30 +263,57 @@ section#Galerie .bilder-spalte2 img:hover {
     margin: 0;
     line-height: 1.4;
     white-space: pre-line;
+    
 
 }
 
-section#Galerie .spalte1 {
-    margin-left: 5vw;
+ 
+#Textfelder #Textfeld1 {
+    font-family: "Sligoil", sans-serif;
+    text-align: center;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 
-#Galerietitel h1 {
-    animation: galerie-titel-lauf 20s linear infinite;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 0;
+
+#Textfelder #Textfeld2 {
+    font-family: "Sligoil", sans-serif;
+    text-align: center;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
-@keyframes galerie-titel-lauf {
-    from {
-        transform: translateX(100vw);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
+#Textfelder #Textfeld3 {
+    font-family: "Sligoil", sans-serif;
+    text-align: center;
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mitwirkende 
+
 
 div#textboxmitwirkende {
     background-color: bisque;
@@ -359,10 +400,7 @@ div#textboxmitwirkende2 {
 
 }
 
-section#Galerie>.bilder-spalte2>img:last-child {
-    height: 739px;
-    width: 100%;
-    object-fit: cover;
+section#Galerie .bilder-spalte2 img:last-child {
     object-position: top;
 }
 #titelmitwirkende {
@@ -374,21 +412,4 @@ section#Galerie>.bilder-spalte2>img:last-child {
     font-family: "Sligoil", sans-serif;
     position: sticky;
     top: 10vh;
-}
-
-#titelmitwirkende h1 {
-    margin: 0;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-size: clamp(1.5rem, 2vw, 2.3rem);
-    letter-spacing: 0.08em;
-    line-height: 1;
-    color: rgb(0, 0, 0);
-}
-
-section#BilderundFirmen > #plaenicon {
-    height: 1000px;
-    width: auto;
-    max-width: none;
-    flex: 0 0 auto;
-}
+} */
